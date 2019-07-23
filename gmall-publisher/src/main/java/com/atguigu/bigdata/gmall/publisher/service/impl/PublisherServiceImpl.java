@@ -23,6 +23,7 @@ public class PublisherServiceImpl implements PublisherService {
 
     @Autowired
     OrderMapper orderMapper;
+
     @Override
     public int getDauTotal(String date) {
         int dauTotal = dauMapper.getDauTotal(date);
@@ -43,10 +44,8 @@ public class PublisherServiceImpl implements PublisherService {
 
         }
 
-
         return dauHourMap;
     }
-
 
     @Override
     public Double getOrderAmountTotal(String date) {
@@ -55,12 +54,16 @@ public class PublisherServiceImpl implements PublisherService {
 
     @Override
     public Map getOrderAmountHour(String date) {
-        List<Map> orderAmountHoutList = orderMapper.getOrderAmountHout(date);
+        // 调整一下map结构
+        List<Map> orderAmountHourList = orderMapper.getOrderAmountHour(date);
         Map orderAmountMap = new HashMap<>();
-        for(Map map : orderAmountHoutList){
+        for(Map map : orderAmountHourList){
             orderAmountMap.put(map.get("CREATE_HOUR"), map.get("ORDER_AMOUNT"));
         }
         return orderAmountMap;
     }
+
+
+
 
 }

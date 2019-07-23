@@ -10,5 +10,5 @@ import java.util.Map;
 public interface OrderMapper {
     public Double getOrderAmountTotal(String date);
 
-    public List<Map> getOrderAmountHout(String date);
+    public List<Map> getOrderAmountHour(String date);
 }

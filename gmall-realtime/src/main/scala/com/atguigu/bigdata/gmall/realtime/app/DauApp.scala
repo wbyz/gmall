@@ -117,7 +117,10 @@ object DauApp {
 
         //把数据写入hbase+phoenix
         distinctDStream.foreachRDD{rdd=>
-            rdd.saveToPhoenix("GMALL0218_DAU",Seq("MID", "UID", "APPID", "AREA", "OS", "CH", "TYPE", "VS", "LOGDATE", "LOGHOUR", "TS") ,new Configuration,Some("hadoop102,hadoop103,hadoop104:2181"))
+            rdd.saveToPhoenix("GMALL0218_DAU",
+                Seq("MID", "UID", "APPID", "AREA", "OS", "CH", "TYPE", "VS", "LOGDATE", "LOGHOUR", "TS") ,
+                new Configuration,
+                Some("hadoop102,hadoop103,hadoop104:2181"))
         }
 
         ssc.start()

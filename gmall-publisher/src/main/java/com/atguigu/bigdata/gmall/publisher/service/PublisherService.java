@@ -21,10 +21,18 @@ public interface PublisherService {
      */
     public Map getDauHours(String date );
 
-    // 查询总交易额
+    /**
+     * 查询总交易额
+     * @param date
+     * @return
+     */
     public Double getOrderAmountTotal(String date);
 
-    // 查询分时交易额
+    /**
+     * 查询分时交易额
+     * @param date
+     * @return
+     */
     public Map getOrderAmountHour(String date);
 
 }

@@ -83,7 +83,6 @@ public class PublisherController {
 
             return JSON.toJSONString(hourMap);
 
-
         }
 
 

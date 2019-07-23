@@ -6,11 +6,10 @@
     </select>
 
 
-    <select id="getOrderAmountHout" resultMap="orderAmountHout">
-        select create_hour ,sum(total_amount)  order_amount from gmall0218_order_info where  create_date=#{date} group by create_hour
-        group by loghour
+    <select id="getOrderAmountHour" resultMap="orderAmountHour">
+         select create_hour ,sum( total_amount) order_amount from gmall0218_order_info  where create_date=#{date} group by create_hour
     </select>
 
-    <resultMap id="orderAmountHout" type="java.util.Map" autoMapping="true">
+    <resultMap id="orderAmountHour" type="java.util.Map" autoMapping="true">
     </resultMap>
 </mapper>
