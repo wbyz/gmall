@@ -12,6 +12,10 @@ public class GmallConstant {
 
 
 
+    public static final String EX_INDEX_ALERT="gmall0218_coupon_alert";
+
+
+
 
 }
 
